@@ -1,0 +1,189 @@
+---
+import Layout from '../layouts/Layout.astro';
+import DomainSearch from '../components/DomainSearch';
+import PopularKeywords from '../components/PopularKeywords.astro';
+import Stats from '../components/Stats.astro';
+import DomainTips from '../components/DomainTips.astro';
+---
+
+<Layout 
+  title="Generador de Dominios - Encuentra tu dominio perfecto"
+  description="Busca y encuentra dominios disponibles combinando palabras clave en español e inglés. Verifica disponibilidad en múltiples extensiones como .com, .es, .org y más."
+  keywords="generador de dominios, buscar dominios disponibles, nombres de dominio, .com, .es, .org, .net, .io, combinador de palabras, domain generator"
+>
+
+  <!-- Domain Search Component (React Island) - Arriba -->
+  <DomainSearch client:load />
+
+  <!-- Stats Section -->
+  <Stats />
+
+  <!-- Popular Keywords -->
+  <PopularKeywords />
+
+  <!-- Domain Tips -->
+  <DomainTips />
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-i18n="features.title">
+          Características Principales
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-i18n="features.subtitle">
+          Todo lo que necesitas para encontrar el dominio perfecto para tu proyecto
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="features.feature1.title">Búsqueda Rápida</h3>
+          <p class="text-gray-600" data-i18n="features.feature1.desc">
+            Verifica la disponibilidad de dominios en tiempo real con nuestra tecnología optimizada.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="features.feature2.title">Múltiples TLDs</h3>
+          <p class="text-gray-600" data-i18n="features.feature2.desc">
+            Busca en más de 10 extensiones diferentes incluyendo .com, .es, .io, .dev y más.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-2xl hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="features.feature3.title">Combinaciones Inteligentes</h3>
+          <p class="text-gray-600" data-i18n="features.feature3.desc">
+            Genera automáticamente combinaciones creativas con palabras comunes en español e inglés.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-2xl hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="features.feature4.title">Bilingüe</h3>
+          <p class="text-gray-600" data-i18n="features.feature4.desc">
+            Combina palabras en español e inglés para encontrar el nombre perfecto para tu marca.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="bg-gradient-to-br from-red-50 to-pink-50 p-6 rounded-2xl hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="features.feature5.title">SEO Optimizado</h3>
+          <p class="text-gray-600" data-i18n="features.feature5.desc">
+            Encuentra dominios que sean fáciles de recordar y optimizados para motores de búsqueda.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-6 rounded-2xl hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="features.feature6.title">Compra Directa</h3>
+          <p class="text-gray-600" data-i18n="features.feature6.desc">
+            Enlaces directos para comprar dominios disponibles en los mejores registradores.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-i18n="howItWorks.title">
+          ¿Cómo Funciona?
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-i18n="howItWorks.subtitle">
+          En solo 3 simples pasos encuentra tu dominio ideal
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Step 1 -->
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            1
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="howItWorks.step1.title">Agrega Palabras Clave</h3>
+          <p class="text-gray-600" data-i18n="howItWorks.step1.desc">
+            Escribe las palabras que representen tu proyecto o marca. Puedes agregar tantas como quieras.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            2
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="howItWorks.step2.title">Configura tu Búsqueda</h3>
+          <p class="text-gray-600" data-i18n="howItWorks.step2.desc">
+            Selecciona el idioma para combinaciones y las extensiones de dominio que te interesan.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            3
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="howItWorks.step3.title">Obtén Resultados</h3>
+          <p class="text-gray-600" data-i18n="howItWorks.step3.desc">
+            Revisa los dominios disponibles y compra el que más te guste con un solo clic.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-primary-600 to-purple-600 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="cta.title">
+        ¿Listo para Encontrar tu Dominio?
+      </h2>
+      <p class="text-xl mb-8 text-blue-100" data-i18n="cta.subtitle">
+        Comienza ahora y encuentra el nombre perfecto para tu próximo proyecto
+      </p>
+      <a
+        href="#"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;"
+        class="inline-block bg-white text-primary-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
+        data-i18n="cta.button"
+      >
+        🚀 Comenzar Búsqueda
+      </a>
+    </div>
+  </section>
+</Layout>

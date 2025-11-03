@@ -1,0 +1,70 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  image?: string;
+  type?: string;
+  canonicalURL?: string;
+}
+
+const {
+  title,
+  description,
+  keywords = 'generador de dominios, buscar dominios, disponibilidad de dominios, nombres de dominio, .com, .es, .org',
+  image = '/og-image.jpg',
+  type = 'website',
+  canonicalURL = Astro.url.pathname
+} = Astro.props;
+
+const siteName = 'Domain Generator';
+const fullTitle = title ? `${title} | ${siteName}` : siteName;
+const siteURL = Astro.site || 'https://domain-generator.example.com';
+const fullCanonicalURL = new URL(canonicalURL, siteURL).toString();
+const fullImageURL = new URL(image, siteURL).toString();
+---
+
+<!-- Primary Meta Tags -->
+<title>{fullTitle}</title>
+<meta name="title" content={fullTitle} />
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="robots" content="index, follow" />
+<meta name="language" content="es, en" />
+<meta name="author" content="Domain Generator" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={fullCanonicalURL} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={fullCanonicalURL} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={fullImageURL} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:locale:alternate" content="en_US" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={fullCanonicalURL} />
+<meta property="twitter:title" content={fullTitle} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={fullImageURL} />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+<!-- Sitemap -->
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#0ea5e9" />
+
+<!-- Preconnect for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

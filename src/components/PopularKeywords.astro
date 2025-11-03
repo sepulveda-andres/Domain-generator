@@ -1,0 +1,53 @@
+---
+import { allSpanishWords } from '../data/spanish-words';
+import { allEnglishWords } from '../data/english-words';
+
+// Función para obtener palabras aleatorias únicas cada vez
+const getRandomWords = (words: string[], count: number) => {
+  // Usar timestamp y un número aleatorio para más aleatoriedad
+  const shuffled = [...words].sort(() => {
+    const random = Math.random() - 0.5;
+    const timeRandom = (Date.now() % 1000) / 1000 - 0.5;
+    return random + timeRandom;
+  });
+  return shuffled.slice(0, count);
+};
+
+const popularKeywords = [
+  { category: 'Tecnología', keywords: getRandomWords(allEnglishWords, 6) },
+  { category: 'Negocios', keywords: getRandomWords(allSpanishWords, 6) },
+  { category: 'Creatividad', keywords: getRandomWords(allEnglishWords, 6) },
+  { category: 'Servicios', keywords: getRandomWords(allSpanishWords, 6) },
+];
+---
+
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3" data-i18n="popularKeywords.title">
+        💡 Palabras Clave Populares
+      </h2>
+      <p class="text-gray-600" data-i18n="popularKeywords.subtitle">
+        Inspírate con estas palabras clave comúnmente usadas
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {popularKeywords.map((group) => (
+        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="font-bold text-gray-900 mb-3 flex items-center gap-2">
+            <span class="text-primary-600">▸</span>
+            <span data-i18n={`popularKeywords.${group.category.toLowerCase()}`}>{group.category}</span>
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {group.keywords.map((keyword) => (
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-primary-100 hover:text-primary-700 transition-colors cursor-pointer">
+                {keyword}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

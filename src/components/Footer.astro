@@ -1,0 +1,60 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-gray-900 text-white mt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- About -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Domain Generator</h3>
+        <p class="text-gray-400 text-sm" data-i18n="footer.about">
+          Encuentra el dominio perfecto para tu proyecto. Combina palabras clave en español e inglés 
+          y descubre disponibilidad en múltiples TLDs.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4" data-i18n="footer.quickLinks">Enlaces rápidos</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="/" class="text-gray-400 hover:text-white transition-colors" data-i18n="footer.home">
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a href="#features" class="text-gray-400 hover:text-white transition-colors" data-i18n="footer.features">
+              Características
+            </a>
+          </li>
+          <li>
+            <a href="#how-it-works" class="text-gray-400 hover:text-white transition-colors" data-i18n="footer.howItWorks">
+              Cómo funciona
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4" data-i18n="footer.tlds">Soporte TLDs</h3>
+        <p class="text-gray-400 text-sm mb-2" data-i18n="footer.tldsDesc">
+          Soportamos múltiples extensiones:
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800 px-2 py-1 rounded text-xs">.com</span>
+          <span class="bg-gray-800 px-2 py-1 rounded text-xs">.es</span>
+          <span class="bg-gray-800 px-2 py-1 rounded text-xs">.org</span>
+          <span class="bg-gray-800 px-2 py-1 rounded text-xs">.net</span>
+          <span class="bg-gray-800 px-2 py-1 rounded text-xs">.io</span>
+          <span class="bg-gray-800 px-2 py-1 rounded text-xs">.dev</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+      <p data-i18n="footer.copyright">&copy; {currentYear} Domain Generator. Hecho con ❤️ usando Astro y React.</p>
+    </div>
+  </div>
+</footer>

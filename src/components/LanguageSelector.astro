@@ -1,0 +1,206 @@
+---
+// Translations component
+---
+
+<div class="language-selector">
+  <button 
+    id="lang-toggle"
+    class="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-100 transition-colors"
+    aria-label="Change language"
+  >
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+    </svg>
+    <span id="current-lang">ES</span>
+  </button>
+</div>
+
+<script>
+  // Translations object - MUST be defined first
+  const translations: Record<string, Record<string, string>> = {
+    es: {
+      'nav.features': 'Características',
+      'nav.howItWorks': 'Cómo funciona',
+      'stats.tlds': 'Extensiones TLD',
+      'stats.combinations': 'Combinaciones',
+      'stats.languages': 'Idiomas',
+      'stats.possibilities': 'Posibilidades',
+      'features.title': 'Características Principales',
+      'features.subtitle': 'Todo lo que necesitas para encontrar el dominio perfecto para tu proyecto',
+      'features.feature1.title': 'Búsqueda Rápida',
+      'features.feature1.desc': 'Verifica la disponibilidad de dominios en tiempo real con nuestra tecnología optimizada.',
+      'features.feature2.title': 'Múltiples TLDs',
+      'features.feature2.desc': 'Busca en más de 10 extensiones diferentes incluyendo .com, .es, .io, .dev y más.',
+      'features.feature3.title': 'Combinaciones Inteligentes',
+      'features.feature3.desc': 'Genera automáticamente combinaciones creativas con palabras comunes en español e inglés.',
+      'features.feature4.title': 'Bilingüe',
+      'features.feature4.desc': 'Combina palabras en español e inglés para encontrar el nombre perfecto para tu marca.',
+      'features.feature5.title': 'SEO Optimizado',
+      'features.feature5.desc': 'Encuentra dominios que sean fáciles de recordar y optimizados para motores de búsqueda.',
+      'features.feature6.title': 'Compra Directa',
+      'features.feature6.desc': 'Enlaces directos para comprar dominios disponibles en los mejores registradores.',
+      'howItWorks.title': '¿Cómo Funciona?',
+      'howItWorks.subtitle': 'En solo 3 simples pasos encuentra tu dominio ideal',
+      'howItWorks.step1.title': 'Agrega Palabras Clave',
+      'howItWorks.step1.desc': 'Escribe las palabras que representen tu proyecto o marca. Puedes agregar tantas como quieras.',
+      'howItWorks.step2.title': 'Configura tu Búsqueda',
+      'howItWorks.step2.desc': 'Selecciona el idioma para combinaciones y las extensiones de dominio que te interesan.',
+      'howItWorks.step3.title': 'Obtén Resultados',
+      'howItWorks.step3.desc': 'Revisa los dominios disponibles y compra el que más te guste con un solo clic.',
+      'cta.title': '¿Listo para Encontrar tu Dominio?',
+      'cta.subtitle': 'Comienza ahora y encuentra el nombre perfecto para tu próximo proyecto',
+      'cta.button': '🚀 Comenzar Búsqueda',
+      'tips.title': '💡 Tips para Mejores Resultados',
+      'tips.do1.title': 'Usa palabras cortas y memorables',
+      'tips.do1.desc': 'Ejemplo: "tech", "shop", "pro", "fast"',
+      'tips.do2.title': 'Combina español e inglés',
+      'tips.do2.desc': 'Ejemplo: "mitech", "shopexpress", "proventas"',
+      'tips.do3.title': 'Prueba múltiples extensiones',
+      'tips.do3.desc': 'Si .com no está disponible, prueba .io, .dev, .app',
+      'tips.dont1.title': 'Evita palabras muy largas',
+      'tips.dont1.desc': 'Difíciles de recordar y escribir',
+      'tips.dont2.title': 'No uses guiones o números',
+      'tips.dont2.desc': 'Pueden confundir a los usuarios',
+      'tips.dont3.title': 'Evita marcas registradas',
+      'tips.dont3.desc': 'Pueden causar problemas legales',
+      'tips.proTip.label': '💡 Pro Tip:',
+      'tips.proTip.text': 'Los dominios cortos y descriptivos son más fáciles de recordar y tienen mejor posicionamiento SEO. Nuestro sistema generará automáticamente cientos de combinaciones basadas en tus palabras clave.',
+      'footer.about': 'Encuentra el dominio perfecto para tu proyecto. Combina palabras clave en español e inglés y descubre disponibilidad en múltiples TLDs.',
+      'footer.quickLinks': 'Enlaces rápidos',
+      'footer.home': 'Inicio',
+      'footer.features': 'Características',
+      'footer.howItWorks': 'Cómo funciona',
+      'footer.tlds': 'Soporte TLDs',
+      'footer.tldsDesc': 'Soportamos múltiples extensiones:',
+      'footer.copyright': '© 2025 Domain Generator. Hecho con ❤️ usando Astro y React.',
+      'popularKeywords.title': '💡 Palabras Clave Populares',
+      'popularKeywords.subtitle': 'Inspírate con estas palabras clave comúnmente usadas',
+      'popularKeywords.tecnología': 'Tecnología',
+      'popularKeywords.negocios': 'Negocios',
+      'popularKeywords.creatividad': 'Creatividad',
+      'popularKeywords.servicios': 'Servicios',
+    },
+    en: {
+      'nav.features': 'Features',
+      'nav.howItWorks': 'How it works',
+      'stats.tlds': 'TLD Extensions',
+      'stats.combinations': 'Combinations',
+      'stats.languages': 'Languages',
+      'stats.possibilities': 'Possibilities',
+      'features.title': 'Main Features',
+      'features.subtitle': 'Everything you need to find the perfect domain for your project',
+      'features.feature1.title': 'Fast Search',
+      'features.feature1.desc': 'Check domain availability in real-time with our optimized technology.',
+      'features.feature2.title': 'Multiple TLDs',
+      'features.feature2.desc': 'Search across 10+ different extensions including .com, .es, .io, .dev and more.',
+      'features.feature3.title': 'Smart Combinations',
+      'features.feature3.desc': 'Automatically generate creative combinations with common words in Spanish and English.',
+      'features.feature4.title': 'Bilingual',
+      'features.feature4.desc': 'Combine words in Spanish and English to find the perfect name for your brand.',
+      'features.feature5.title': 'SEO Optimized',
+      'features.feature5.desc': 'Find domains that are easy to remember and optimized for search engines.',
+      'features.feature6.title': 'Direct Purchase',
+      'features.feature6.desc': 'Direct links to buy available domains from the best registrars.',
+      'howItWorks.title': 'How Does it Work?',
+      'howItWorks.subtitle': 'Find your ideal domain in just 3 simple steps',
+      'howItWorks.step1.title': 'Add Keywords',
+      'howItWorks.step1.desc': 'Enter words that represent your project or brand. You can add as many as you want.',
+      'howItWorks.step2.title': 'Configure Your Search',
+      'howItWorks.step2.desc': 'Select the language for combinations and the domain extensions you are interested in.',
+      'howItWorks.step3.title': 'Get Results',
+      'howItWorks.step3.desc': 'Review available domains and buy the one you like best with a single click.',
+      'cta.title': 'Ready to Find Your Domain?',
+      'cta.subtitle': 'Start now and find the perfect name for your next project',
+      'cta.button': '🚀 Start Search',
+      'tips.title': '💡 Tips for Better Results',
+      'tips.do1.title': 'Use short and memorable words',
+      'tips.do1.desc': 'Example: "tech", "shop", "pro", "fast"',
+      'tips.do2.title': 'Combine Spanish and English',
+      'tips.do2.desc': 'Example: "mitech", "shopexpress", "proventas"',
+      'tips.do3.title': 'Try multiple extensions',
+      'tips.do3.desc': 'If .com is not available, try .io, .dev, .app',
+      'tips.dont1.title': 'Avoid very long words',
+      'tips.dont1.desc': 'Hard to remember and type',
+      'tips.dont2.title': 'Don\'t use hyphens or numbers',
+      'tips.dont2.desc': 'They can confuse users',
+      'tips.dont3.title': 'Avoid trademarks',
+      'tips.dont3.desc': 'Can cause legal problems',
+      'tips.proTip.label': '💡 Pro Tip:',
+      'tips.proTip.text': 'Short and descriptive domains are easier to remember and have better SEO ranking. Our system will automatically generate hundreds of combinations based on your keywords.',
+      'footer.about': 'Find the perfect domain for your project. Combine keywords in Spanish and English and discover availability across multiple TLDs.',
+      'footer.quickLinks': 'Quick Links',
+      'footer.home': 'Home',
+      'footer.features': 'Features',
+      'footer.howItWorks': 'How it works',
+      'footer.tlds': 'TLD Support',
+      'footer.tldsDesc': 'We support multiple extensions:',
+      'footer.copyright': '© 2025 Domain Generator. Made with ❤️ using Astro and React.',
+      'popularKeywords.title': '💡 Popular Keywords',
+      'popularKeywords.subtitle': 'Get inspired by these commonly used keywords',
+      'popularKeywords.tecnología': 'Technology',
+      'popularKeywords.negocios': 'Business',
+      'popularKeywords.creatividad': 'Creativity',
+      'popularKeywords.servicios': 'Services',
+    }
+  };
+  
+  // Language toggle functionality
+  const langToggle = document.getElementById('lang-toggle');
+  const currentLangSpan = document.getElementById('current-lang');
+  
+  // Get current language from localStorage or default to 'es'
+  let currentLang = localStorage.getItem('preferred-lang') || 'es';
+  
+  // Apply translations to the page
+  function applyTranslations(lang: string) {
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      if (key && translations[lang] && translations[lang][key]) {
+        element.textContent = translations[lang][key];
+      }
+    });
+    
+    // Update placeholders
+    const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
+    placeholders.forEach(element => {
+      const key = element.getAttribute('data-i18n-placeholder');
+      if (key && translations[lang] && translations[lang][key]) {
+        (element as HTMLInputElement).placeholder = translations[lang][key];
+      }
+    });
+  }
+  
+  // Update UI based on current language
+  function updateLanguage(lang: string) {
+    currentLang = lang;
+    localStorage.setItem('preferred-lang', lang);
+    
+    if (currentLangSpan) {
+      currentLangSpan.textContent = lang.toUpperCase();
+    }
+    
+    // Dispatch event for other components to listen
+    document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
+    
+    // Update page content
+    applyTranslations(lang);
+  }
+  
+  // Toggle language on click
+  if (langToggle) {
+    langToggle.addEventListener('click', () => {
+      const newLang = currentLang === 'es' ? 'en' : 'es';
+      updateLanguage(newLang);
+    });
+  }
+  
+  // Initialize with current language
+  updateLanguage(currentLang);
+</script>
+
+<style>
+  .language-selector {
+    position: relative;
+  }
+</style>

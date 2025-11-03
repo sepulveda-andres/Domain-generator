@@ -1,0 +1,42 @@
+---
+const stats = [
+  {
+    number: '10+',
+    label: 'Extensiones TLD',
+    labelKey: 'stats.tlds',
+    icon: '🌐'
+  },
+  {
+    number: '100+',
+    label: 'Combinaciones',
+    labelKey: 'stats.combinations',
+    icon: '🔄'
+  },
+  {
+    number: '2',
+    label: 'Idiomas',
+    labelKey: 'stats.languages',
+    icon: '🌍'
+  },
+  {
+    number: '∞',
+    label: 'Posibilidades',
+    labelKey: 'stats.possibilities',
+    icon: '✨'
+  }
+];
+---
+
+<section class="py-12 bg-gradient-to-r from-primary-600 to-purple-600">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      {stats.map((stat) => (
+        <div class="text-center text-white">
+          <div class="text-4xl mb-2">{stat.icon}</div>
+          <div class="text-3xl md:text-4xl font-bold mb-1">{stat.number}</div>
+          <div class="text-sm md:text-base text-blue-100" data-i18n={stat.labelKey}>{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
